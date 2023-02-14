@@ -1,0 +1,28 @@
+[package]
+name = "rust-web"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Tokio异步运行时，rust目前最流行，最有名气的异步库。
+tokio = {version = "1.20.0", features = ["full"]}
+# axun，Tokio系旗下的web框架，这次就是要体验一下Tokio全家桶
+axum = {version = "0.5.13", features = ["headers"]}
+# sqlx 异步数据库框架,并不是orm框架那种，没有DSL，用户自己编写sql语句，将查询结果按列取出或映射到struct上
+sqlx = { version = "0.6.0", features = [ "runtime-tokio-rustls" ,"mysql","chrono"] }
+# once_cell初始化全局变量库
+once_cell = "1.13.0"
+# serde、serde_json序列化专用库
+serde = {version = "1.0.140", features = ['derive']}
+serde_json = "1.0.82"
+# tracing、tracing-subscriber，日志库
+tracing = "0.1.36"
+tracing-subscriber = {version = "0.3.15", features = ["env-filter"]}
+# dotenv环境变量库
+dotenv = "0.15.0"
+# jsonwebtoken jwt认证库
+jsonwebtoken = "8.1.1"
+# chrono时间库
+chrono = { version = "0.4.19",features = ["serde"] }
